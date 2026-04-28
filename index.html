@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fotosyntese & Calvin-cyklus – Interaktiv</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Fotosyntese – fra lys til liv</h1>
+      <p>Interaktiv gennemgang af lysreaktioner og Calvin-cyklus på gymnasieniveau.</p>
+      <button id="startTour">Start gennemgang</button>
+    </div>
+    <div class="hero-graphic">
+      <div class="sun"></div>
+      <div class="leaf">
+        <div class="chloroplast"></div>
+      </div>
+      <div class="molecule co2">CO8</div>
+      <div class="molecule h2o">H8O</div>
+      <div class="molecule o2">O8</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="card">
+      <h2>1. Overblik: Hvad er fotosyntese?</h2>
+      <p>
+        Fotosyntese er processen, hvor grønne planter omdanner lysenergi til kemisk energi
+        lagret i organiske stoffer som glukose. Ilt (O8) frigives som biprodukt.
+      </p>
+      <ul>
+        <li>Foregår i kloroplaster (grønkorn) i planteceller.</li>
+        <li>Består af <strong>lysreaktioner</strong> og <strong>Calvin-cyklus</strong>.</li>
+        <li>Lysreaktioner danner ATP og NADPH.</li>
+        <li>Calvin-cyklus bruger ATP og NADPH til at fikserer CO8 og danne G3P/glukose.</li>
+      </ul>
+    </section>
+
+    <section id="lightReactions" class="card">
+      <h2>2. Lysreaktionerne</h2>
+      <p>
+        Lysreaktionerne foregår i thylakoidmembranerne. Her absorberer klorofyl lys,
+        vand spaltes (fotolyse), og der dannes ATP og NADPH.
+      </p>
+      <div class="diagram light-diagram">
+        <div class="thylakoid">Thylakoidmembran</div>
+        <div class="arrow light">Lys \u2192</div>
+        <div class="bubble h2o">H8O</div>
+        <div class="bubble o2">O8</div>
+        <div class="bubble atp">ATP</div>
+        <div class="bubble nadph">NADPH</div>
+      </div>
+      <ul>
+        <li>Klorofyl exciterer elektroner i fotosystem II og I.</li>
+        <li>Vand spaltes: 2 H8O \u2192 O8 + H8 + e8.</li>
+        <li>Elektrontransportkæden danner en protongradient til ATP-syntase.</li>
+        <li>Elektroner ender med at reducere NADP8 til NADPH.</li>
+      </ul>
+    </section>
+
+    <section id="calvin" class="card">
+      <h2>3. Calvin-cyklus</h2>
+      <p>
+        Calvin-cyklussen foregår i stroma. Den bruger ATP og NADPH til at fikserer CO8
+        og danne G3P, som kan omdannes til glukose og andre organiske stoffer.
+      </p>
+
+      <div class="calvin-wheel">
+        <button class="phase-btn" data-phase="fix">1. Carbon-fiksering</button>
+        <button class="phase-btn" data-phase="red">2. Reduktion</button>
+        <button class="phase-btn" data-phase="reg">3. Regenerering</button>
+      </div>
+
+      <div id="phaseText" class="phase-text">
+        <h3>Vælg en fase ovenfor</h3>
+        <p>Klik på en af faserne for at se en forklaring.</p>
+      </div>
+    </section>
+
+    <section id="keywords" class="card">
+      <h2>4. Stikord til emnet</h2>
+      <div class="tag-cloud">
+        <span>Fotosyntese</span>
+        <span>Kloroplast</span>
+        <span>Thylakoid</span>
+        <span>Stroma</span>
+        <span>Lysreaktioner</span>
+        <span>Calvin-cyklus</span>
+        <span>RuBisCO</span>
+        <span>RuBP</span>
+        <span>3-PGA</span>
+        <span>G3P</span>
+        <span>ATP</span>
+        <span>NADPH</span>
+        <span>Carbon-fiksering</span>
+        <span>Reduktion</span>
+        <span>Regenerering</span>
+      </div>
+    </section>
+
+    <section id="flashcards" class="card">
+      <h2>5. Flashcards – øv din viden</h2>
+      <p>Klik på kortet for at vende det. Brug næste/forrige til at skifte spørgsmål.</p>
+      <div class="flashcard-container">
+        <div id="flashcard" class="flashcard">
+          <div class="front"></div>
+          <div class="back"></div>
+        </div>
+      </div>
+      <div class="flashcard-controls">
+        <button id="prevCard">\u2190 Forrige</button>
+        <button id="nextCard">Næste \u2192</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Lav til 3.g-niveau – interaktiv oversigt over fotosyntese og Calvin-cyklus.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
