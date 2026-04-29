@@ -2,122 +2,241 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Fotosyntese & Calvin-cyklus – Interaktiv</title>
+  <title>Fotosyntese & Calvin-cyklus – Interaktiv forklaring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="hero-text">
       <h1>Fotosyntese – fra lys til liv</h1>
-      <p>Interaktiv gennemgang af lysreaktioner og Calvin-cyklus på gymnasieniveau.</p>
-      <button id="startTour">Start gennemgang</button>
+      <p>
+        Få en trin-for-trin gennemgang af lysreaktioner og Calvin-cyklus lavet til 3.g-niveau,
+        med illustrationer, stikord og interaktive flashcards.
+      </p>
+      <div class="hero-actions">
+        <button id="startTour">Start gennemgang</button>
+        <a href="#calvin" class="ghost-btn">Hop direkte til Calvin-cyklus</a>
+      </div>
     </div>
     <div class="hero-graphic">
-      <div class="sun"></div>
+      <div class="sun" aria-hidden="true"></div>
       <div class="leaf">
         <div class="chloroplast"></div>
       </div>
-      <div class="molecule co2">CO8</div>
-      <div class="molecule h2o">H8O</div>
-      <div class="molecule o2">O8</div>
+      <div class="molecule co2">CO₂</div>
+      <div class="molecule h2o">H₂O</div>
+      <div class="molecule o2">O₂</div>
     </div>
   </header>
 
   <main>
+    <!-- Sektion 1: Overblik -->
     <section id="overview" class="card">
       <h2>1. Overblik: Hvad er fotosyntese?</h2>
       <p>
-        Fotosyntese er processen, hvor grønne planter omdanner lysenergi til kemisk energi
-        lagret i organiske stoffer som glukose. Ilt (O8) frigives som biprodukt.
+        Fotosyntese er den proces, hvor planter, alger og visse bakterier omdanner
+        lysenergi til kemisk energi i form af glukose. Ilt (O₂) frigives som biprodukt.
       </p>
-      <ul>
-        <li>Foregår i kloroplaster (grønkorn) i planteceller.</li>
-        <li>Består af <strong>lysreaktioner</strong> og <strong>Calvin-cyklus</strong>.</li>
-        <li>Lysreaktioner danner ATP og NADPH.</li>
-        <li>Calvin-cyklus bruger ATP og NADPH til at fikserer CO8 og danne G3P/glukose.</li>
-      </ul>
-    </section>
-
-    <section id="lightReactions" class="card">
-      <h2>2. Lysreaktionerne</h2>
-      <p>
-        Lysreaktionerne foregår i thylakoidmembranerne. Her absorberer klorofyl lys,
-        vand spaltes (fotolyse), og der dannes ATP og NADPH.
-      </p>
-      <div class="diagram light-diagram">
-        <div class="thylakoid">Thylakoidmembran</div>
-        <div class="arrow light">Lys \u2192</div>
-        <div class="bubble h2o">H8O</div>
-        <div class="bubble o2">O8</div>
-        <div class="bubble atp">ATP</div>
-        <div class="bubble nadph">NADPH</div>
+      <div class="two-column">
+        <div>
+          <h3>Grundlæggende idé</h3>
+          <ul>
+            <li>Foregår i kloroplaster (grønkorn) i planteceller.</li>
+            <li>Bruger lysenergi, vand (H₂O) og kuldioxid (CO₂).</li>
+            <li>Producerer glukose (C₆H₁₂O₆) og ilt (O₂).</li>
+            <li>Er grundlaget for næsten alle fødekæder på Jorden.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Overordnet reaktionsskema</h3>
+          <p class="formula">
+            6 CO₂ + 6 H₂O + lysenergi → C₆H₁₂O₆ + 6 O₂
+          </p>
+          <p class="note">Husk: CO₂ + H₂O + lys → sukker + ilt.</p>
+        </div>
       </div>
-      <ul>
-        <li>Klorofyl exciterer elektroner i fotosystem II og I.</li>
-        <li>Vand spaltes: 2 H8O \u2192 O8 + H8 + e8.</li>
-        <li>Elektrontransportkæden danner en protongradient til ATP-syntase.</li>
-        <li>Elektroner ender med at reducere NADP8 til NADPH.</li>
-      </ul>
     </section>
 
-    <section id="calvin" class="card">
-      <h2>3. Calvin-cyklus</h2>
+    <!-- Sektion 2: Kloroplastens opbygning -->
+    <section id="chloroplast" class="card">
+      <h2>2. Kloroplastens opbygning</h2>
       <p>
-        Calvin-cyklussen foregår i stroma. Den bruger ATP og NADPH til at fikserer CO8
-        og danne G3P, som kan omdannes til glukose og andre organiske stoffer.
+        For at forstå fotosyntese hjælper det at kende de to hoveddele i kloroplasten,
+        hvor de forskellige reaktioner foregår.
       </p>
+      <div class="two-column">
+        <div class="diagram chloroplast-diagram">
+          <div class="label stroma">Stroma</div>
+          <div class="label thylakoid">Thylakoidmembran</div>
+          <div class="label lumen">Thylakoidlumen</div>
+        </div>
+        <div>
+          <ul>
+            <li><strong>Thylakoidmembraner:</strong> her sidder klorofyl og fotosystemerne – lysreaktionerne foregår her.</li>
+            <li><strong>Stroma:</strong> væsken omkring thylakoiderne – her foregår Calvin-cyklussen.</li>
+            <li><strong>Grana:</strong> stabler af thylakoider, som øger overfladearealet til lysoptagelse.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sektion 3: Lysreaktioner detaljeret -->
+    <section id="lightReactions" class="card">
+      <h2>3. Lysreaktionerne – detaljeret</h2>
+      <p>
+        Lysreaktionerne omdanner lysenergi til kemisk energi (ATP og NADPH) og spalter vand.
+        De foregår i thylakoidmembranerne.
+      </p>
+      <div class="two-column">
+        <div>
+          <ol>
+            <li>Klorofyl i fotosystem II absorberer lys → elektroner exciteres.</li>
+            <li>Vand spaltes (fotolyse): 2 H₂O → O₂ + 4 H⁺ + 4 e⁻ (ilt frigives).</li>
+            <li>Elektroner løber gennem elektrontransportkæden → protongradient opbygges.</li>
+            <li>ATP-syntase bruger protongradienten til at danne ATP.</li>
+            <li>I fotosystem I exciteres elektroner igen og ender med at reducere NADP⁺ til NADPH.</li>
+          </ol>
+          <p class="note">
+            Kort sagt: lys → exciterede elektroner → protongradient → ATP + NADPH.
+          </p>
+        </div>
+        <div class="diagram light-diagram">
+          <div class="thylakoid">Thylakoidmembran</div>
+          <div class="arrow light">Lys →</div>
+          <div class="bubble h2o">H₂O ind</div>
+          <div class="bubble o2">O₂ ud</div>
+          <div class="bubble atp">ATP</div>
+          <div class="bubble nadph">NADPH</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sektion 4: Calvin-cyklus – overblik -->
+    <section id="calvin" class="card">
+      <h2>4. Calvin-cyklus – overblik</h2>
+      <p>
+        Calvin-cyklussen er den lysuafhængige del af fotosyntesen og foregår i stroma.
+        Den bruger ATP og NADPH fra lysreaktionerne til at fikserer CO₂ og danne G3P,
+        som kan omdannes til glukose.
+      </p>
+      <div class="two-column">
+        <div>
+          <h3>Hovedidé</h3>
+          <ul>
+            <li>Bruger <strong>ATP</strong> (energi) og <strong>NADPH</strong> (reduktionskraft).</li>
+            <li>Fikserer CO₂ i et organisk molekyle.</li>
+            <li>Danner G3P (glyceraldehyd-3-fosfat), et 3C-sukker.</li>
+            <li>Nogle G3P → glukose, resten → gendanner RuBP.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tre faser</h3>
+          <ol>
+            <li>Carbon-fiksering</li>
+            <li>Reduktion</li>
+            <li>Regenerering af RuBP</li>
+          </ol>
+          <p class="note">Tænk: <strong>Fiksering → Reduktion → Regenerering</strong>.</p>
+        </div>
+      </div>
 
       <div class="calvin-wheel">
         <button class="phase-btn" data-phase="fix">1. Carbon-fiksering</button>
         <button class="phase-btn" data-phase="red">2. Reduktion</button>
         <button class="phase-btn" data-phase="reg">3. Regenerering</button>
+        <button class="phase-btn" data-phase="energy">Energiregnskab</button>
       </div>
 
       <div id="phaseText" class="phase-text">
         <h3>Vælg en fase ovenfor</h3>
-        <p>Klik på en af faserne for at se en forklaring.</p>
+        <p>Klik på en af faserne for at se forklaringen i detaljer.</p>
       </div>
     </section>
 
+    <!-- Sektion 5: Sammenhæng lysreaktioner ↔ Calvin -->
+    <section id="link" class="card">
+      <h2>5. Sammenhæng mellem lysreaktioner og Calvin-cyklus</h2>
+      <p>
+        De to dele af fotosyntesen hænger tæt sammen – produkter fra lysreaktionerne er
+        nødvendige for Calvin-cyklussen.
+      </p>
+      <div class="flow-diagram">
+        <div class="flow-box">
+          <h3>Lysreaktioner</h3>
+          <ul>
+            <li>Foregår i thylakoidmembran.</li>
+            <li>Producerer ATP og NADPH.</li>
+            <li>Frigiver O₂ fra H₂O.</li>
+          </ul>
+        </div>
+        <div class="flow-arrow">ATP + NADPH →</div>
+        <div class="flow-box">
+          <h3>Calvin-cyklus</h3>
+          <ul>
+            <li>Foregår i stroma.</li>
+            <li>Bruger ATP og NADPH til CO₂-fiksering.</li>
+            <li>Danner G3P → glukose.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sektion 6: Stikord / summary -->
     <section id="keywords" class="card">
-      <h2>4. Stikord til emnet</h2>
+      <h2>6. Stikord til repetition</h2>
+      <p>Brug stikordene som hurtig repetition eller til at lave dine egne noter.</p>
       <div class="tag-cloud">
         <span>Fotosyntese</span>
         <span>Kloroplast</span>
         <span>Thylakoid</span>
         <span>Stroma</span>
         <span>Lysreaktioner</span>
+        <span>Fotolyse</span>
+        <span>Elektrontransportkæde</span>
+        <span>ATP-syntase</span>
+        <span>ATP</span>
+        <span>NADPH</span>
         <span>Calvin-cyklus</span>
         <span>RuBisCO</span>
         <span>RuBP</span>
         <span>3-PGA</span>
         <span>G3P</span>
-        <span>ATP</span>
-        <span>NADPH</span>
         <span>Carbon-fiksering</span>
         <span>Reduktion</span>
         <span>Regenerering</span>
+        <span>Glukose</span>
+        <span>Autotrof</span>
       </div>
     </section>
 
+    <!-- Sektion 7: Flashcards -->
     <section id="flashcards" class="card">
-      <h2>5. Flashcards – øv din viden</h2>
+      <h2>7. Flashcards – test dig selv</h2>
       <p>Klik på kortet for at vende det. Brug næste/forrige til at skifte spørgsmål.</p>
       <div class="flashcard-container">
-        <div id="flashcard" class="flashcard">
+        <div id="flashcard" class="flashcard" aria-live="polite">
           <div class="front"></div>
           <div class="back"></div>
         </div>
       </div>
       <div class="flashcard-controls">
-        <button id="prevCard">\u2190 Forrige</button>
-        <button id="nextCard">Næste \u2192</button>
+        <button id="prevCard">← Forrige</button>
+        <button id="nextCard">Næste →</button>
       </div>
+    </section>
+
+    <!-- Sektion 8: Mini-quiz (multiple choice) -->
+    <section id="quiz" class="card">
+      <h2>8. Mini-quiz</h2>
+      <p>Vælg det rigtige svar og tjek om du har forstået det.</p>
+      <div id="quizContainer" class="quiz"></div>
     </section>
   </main>
 
   <footer>
-    <p>Lav til 3.g-niveau – interaktiv oversigt over fotosyntese og Calvin-cyklus.</p>
+    <p>Udarbejdet som hjælp til 3.g-elever: Fotosyntese og Calvin-cyklus forklaret trin-for-trin.</p>
+    <p><a href="#top">Til toppen</a></p>
   </footer>
 
   <script src="script.js"></script>
